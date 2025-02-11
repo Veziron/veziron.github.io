@@ -1,0 +1,61 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+html, body {
+    width: 100%;
+    min-height: 100vh;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+.background-container {
+    width: 100vw;
+    min-height: 100vh;
+    position: relative;
+}
+
+.background-container img {
+    width: 100%;
+    height: auto;
+    min-height: 100vh;
+    object-fit: cover;
+    display: block;
+}
+
+
+.fixed-link {
+    position: fixed;
+    top: 50%; /* Центрирование по вертикали */
+    left: 20px; /* Отступ от левого края */
+    transform: translateY(-50%); /* Смещение вверх на половину высоты ссылки */
+    background: rgba(0, 0, 0, 0.2);
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    z-index: 1000; /* Поднимаем над всеми элементами */
+    font-size: 14px; /* Размер шрифта */
+    display: block; /* Убеждаемся, что элемент виден */
+}
+
+.fixed-link:hover {
+    background: rgba(0, 0, 0, 0.8);
+}
+
+body {
+    opacity: 0; /* Начинаем с прозрачности */
+    animation: fadeIn 0.8s ease-out forwards; /* Плавное появление */
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}

@@ -1,0 +1,168 @@
+/* Стандартные стили */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #0c0c0c; /* Тёмный фон */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  position: relative;
+}
+
+/* Экран загрузки */
+#loading-screen {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(3, 3, 3); /* Полупрозрачный чёрный фон */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#loading-screen img {
+  width: 1400px; /* Размер изображения */
+  height: 788px;
+}
+
+/* Контейнер карусели */
+.carousel-wrapper {
+  position: relative;
+  width: 400px;
+  height: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  display: none; /* Скрыто по умолчанию */
+}
+
+/* Карусель */
+.carousel {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  perspective: 1200px;
+}
+
+/* Элементы карусели */
+.carousel-items {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  transform-style: preserve-3d;
+  transition: transform 0.8s ease-in-out;
+  transform-origin: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Карточки */
+.item {
+  position: absolute;
+  width: 200px;
+  height: 300px;
+  border-radius: 10px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Поворот элементов */
+.item:nth-child(1)  { transform: rotateY(0deg) translateZ(400px); }
+.item:nth-child(2)  { transform: rotateY(30deg) translateZ(400px); }
+.item:nth-child(3)  { transform: rotateY(60deg) translateZ(400px); }
+.item:nth-child(4)  { transform: rotateY(90deg) translateZ(400px); }
+.item:nth-child(5)  { transform: rotateY(120deg) translateZ(400px); }
+.item:nth-child(6)  { transform: rotateY(150deg) translateZ(400px); }
+.item:nth-child(7)  { transform: rotateY(180deg) translateZ(400px); }
+.item:nth-child(8)  { transform: rotateY(210deg) translateZ(400px); }
+.item:nth-child(9)  { transform: rotateY(240deg) translateZ(400px); }
+.item:nth-child(10) { transform: rotateY(270deg) translateZ(400px); }
+.item:nth-child(11) { transform: rotateY(300deg) translateZ(400px); }
+.item:nth-child(12) { transform: rotateY(330deg) translateZ(400px); }
+
+/* Радиокнопки (скрываем) */
+input {
+  display: none;
+}
+
+/* Поворот при выборе */
+input:nth-of-type(1):checked ~ .carousel-items { transform: rotateY(0deg); }
+input:nth-of-type(2):checked ~ .carousel-items { transform: rotateY(-30deg); }
+input:nth-of-type(3):checked ~ .carousel-items { transform: rotateY(-60deg); }
+input:nth-of-type(4):checked ~ .carousel-items { transform: rotateY(-90deg); }
+input:nth-of-type(5):checked ~ .carousel-items { transform: rotateY(-120deg); }
+input:nth-of-type(6):checked ~ .carousel-items { transform: rotateY(-150deg); }
+input:nth-of-type(7):checked ~ .carousel-items { transform: rotateY(-180deg); }
+input:nth-of-type(8):checked ~ .carousel-items { transform: rotateY(-210deg); }
+input:nth-of-type(9):checked ~ .carousel-items { transform: rotateY(-240deg); }
+input:nth-of-type(10):checked ~ .carousel-items { transform: rotateY(-270deg); }
+input:nth-of-type(11):checked ~ .carousel-items { transform: rotateY(-300deg); }
+input:nth-of-type(12):checked ~ .carousel-items { transform: rotateY(-330deg); }
+
+/* Контролы */
+.controls {
+  position: absolute;
+  bottom: -50px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 10px;
+}
+
+.controls label {
+  width: 15px;
+  height: 15px;
+  background-color: #463e3e;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.controls label:hover {
+  background-color: #ff004c;
+}
+
+/* Кнопка */
+.carousel-button {
+  position: absolute;
+  bottom: -120px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 10px 20px;
+  background-color: #141414;
+  color: #fff;
+  text-align: center;
+  font-size: 16px;
+  text-decoration: none;
+  border-radius: 5px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+  transition: background-color 0.3s;
+}
+
+.carousel-button:hover {
+  background-color: #0f0d0d;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+}
+
