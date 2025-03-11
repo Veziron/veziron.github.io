@@ -26,8 +26,8 @@ html, body {
 }
 
 #loading-screen img {
-  width: 1080px; /* Размер изображения */
-  height: 1080px;
+  width: 540px; /* Размер изображения */
+  height: 540px;
 }
 
 .background-container {
