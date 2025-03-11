@@ -12,6 +12,24 @@ html, body {
     overflow-y: auto;
 }
 
+/* Экран загрузки */
+#loading-screen {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(243, 241, 221); /* Полупрозрачный чёрный фон */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#loading-screen img {
+  width: 1080px; /* Размер изображения */
+  height: 1080px;
+}
+
 .background-container {
     width: 100vw;
     min-height: 100vh;
